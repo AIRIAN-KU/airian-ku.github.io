@@ -102,7 +102,7 @@
 	/* border: 1px solid #ddd; 박스 테두리 */
 	/* border-radius: 5px; */
 	padding: 15px;
-	margin: 10px 0; /* 위아래 간격 */
+	margin: 10px 0; /* 위아래 10px 마진 */
 	text-align: left; /* 텍스트 중앙 정렬 */
 	height: 130px; /* 박스 높이 고정 */
 	display: flex;
@@ -117,9 +117,9 @@
 	justify-content: center; /* 수평 가운데 정렬 */
 	align-items: center; /* 수직 가운데 정렬 */
 	flex-direction: column; /* 요소를 수직 방향으로 배치 */
-	padding: 20px 0 20px; /* 위, 아래 여백 추가 */
+	padding: 20px 0; /* 위아래 20px 패딩 */
 	height: 100%; /* 부모 높이에 맞춤 */
-	margin: 0 0 40px 0;
+	margin: 0 0 40px 0; /* 아래 40px 마진 */
   }
   
 .feature-mobile img {
@@ -284,10 +284,6 @@ h6 {
 	height: 100%;
 	/* background: url(images/pattern.png); */
 }
-/* .banner a.weblink {
-	color:#ffffff;
-	border-bottom:1px dotted #5786FF;
-} */
 .banner a:hover {
 	text-decoration:none;
 }
@@ -322,18 +318,17 @@ h6 {
 	position:relative
 }
 .section-padding {
-	padding: 40px auto 40px auto; 
-	
+	padding: 60px 0; /* 위아래 60px 패딩 */
 }
 .sectioner-header-1 {
 	/* width:69%; */
-	padding: 40px 10px 40px auto; 
+	padding: 40px 0; /* 위아래 40px 패딩 */
 	/* padding:40px auto 100px auto;  */
 }
 .sectioner-header-2 {
-	width:69%;
-	margin: 65px auto 40px auto;
-	padding: 40px auto 10px auto; 
+	width: 80%; /* 너비를 80%로 조정 */
+	margin: 0px auto 0px auto; /* 위아래 마진을 줄임 */
+	padding: 30px 0; /* 위아래 40px 패딩 */
 }
 
 
@@ -370,7 +365,7 @@ h6 {
 
 }
 .section-content {
-	margin: 0px 10px 5px 10px ;
+	margin: 20px 0; /* 위아래 20px 마진 */
 }
 .section-content a{
 	padding-left: 8px;
@@ -545,6 +540,7 @@ h6 {
     width: 235px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1); /* 더 깊은 그림자 */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+	margin: 20px 0; /* 위아래 20px 마진 */
 }
 
 .pricing-card:hover {
@@ -606,8 +602,7 @@ h6 {
 	border-top: 1px solid #e4e4e4;
 }
 .team-detail {
-	margin-top:50px;
-	margin-bottom: 50px;
+	margin: 50px 0; /* 위아래 50px 마진 */
 }
 .team-detail img {
 	border-radius: 50%;
@@ -621,7 +616,7 @@ h6 {
 }
 .testimonial {
 	background: #100F16;
-	padding: 60px 0px 60px 0px;
+	padding: 60px 0; /* 위아래 60px 패딩 */
 	position:relative;
 }
 .testimonial::before {
@@ -702,7 +697,7 @@ h6 {
 	border-bottom: 1px solid #e4e4e4;
 }
 .faq-content {
-	margin: 20px 0px;
+	margin: 20px 0; /* 위아래 20px 마진 */
 }
 .faq-content h4 {
 	font-weight: 400;
@@ -827,7 +822,7 @@ input {
 
 .download {
 	background: #100F16;
-	padding: 40px 0px;
+	padding: 40px 0; /* 위아래 40px 패딩 */
 	position:relative;
 }
 .download::before {
@@ -859,7 +854,7 @@ input {
 	color: #242424;
 	font-size: 13px;
 	text-align: center;
-	padding:15px 0px;
+	padding:15px 0; /* 위아래 15px 패딩 */
 }
 .footer-copy p {
 	margin-bottom:0px;
