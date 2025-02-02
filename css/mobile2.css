@@ -1,0 +1,33 @@
+/* 기본 스타일 (웹 버전) */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 16px;
+}
+
+/* 모바일 버전 */
+@media only screen and (max-width: 768px) {
+    .pricing-container {
+        display: flex;
+        overflow-x: scroll;                     /* 가로 스크롤 활성화 */
+        -webkit-overflow-scrolling: touch;      /* iOS 부드러운 스크롤 */
+        scroll-snap-type: x mandatory;          /* 스크롤 스냅 활성화 */
+        gap: 16px;                              /* 카드 간격 */
+        padding: 0 8px;                         /* 양쪽 여백 최소화 */
+        scrollbar-width: none;                  /* Firefox 스크롤바 숨기기 */
+    }
+
+    /* 스크롤바 감추기 (Chrome, Safari 등) */
+    .pricing-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .pricing-card {
+        flex: 0 0 auto;                         /* 자동 너비 조정 방지 */
+        width: 300px;                           /* 카드 고정 너비 */
+        scroll-snap-align: center;              /* 스크롤 시 중앙 정렬 */
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+}

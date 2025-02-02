@@ -6,6 +6,7 @@
   <!-- <meta property="og:url" content="http://airing-ku.github.io">
   <meta property="og:title" content="Airing 에어링"> -->
   <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:image" content="images/썸네일.png">
   <meta property="og:description" content="새벽 시간대에 인천공항까지 어떻게 오가지? 고민하는 당신을 위한 맞춤형 셔틀버스">
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
-  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/mobile2.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <!-- Font Google -->
@@ -199,40 +200,42 @@
       <div class="sectioner-header-3 text-center white">
         <h4 style="margin: 0 auto 20px auto; padding-top: 0; margin-top: 0px;">요금 안내</h4>
       
-        <div class="pricing-container">
-          <div class="pricing-card" data-deadline="1/17 (금) 자정 마감" data-announcement="1/18 (토) 18시">
-            <h1>1/20 (월)</h1>
-            <h3>28,000원</h3>
-            <ul>
-                <li>노선 생성 안내: <span class="announcement-date">1/18 (토) 18시</span></li>
-            </ul>
-            <div class="button">
-                <a href="javascript:void(0);" onclick="showDriver()">1/17 (금) 자정 미감</a>
-            </div>
-        </div>
-
-        <div class="pricing-card" data-deadline="1/24 (금) 자정 마감" data-announcement="1/25 (토) 18시">
-            <h1>1/27 (월)</h1>
-            <h3>35,000원</h3>
-            <ul>
-                <li>노선 생성 안내: <span class="announcement-date">1/25 (토) 18시</span></li>
-            </ul>
-            <div class="button">
-                <a href="javascript:void(0);" onclick="showDriver()">1/24 (금) 자정 마감</a>
-            </div>
-        </div>
-
-        <div class="pricing-card" data-deadline="1/31 (금) 자정 마감" data-announcement="2/1 (토) 18시">
-            <h1>2/3 (월)</h1>
-            <h3>42,000원</h3>
-            <ul>
-                <li>노선 생성 안내: <span class="announcement-date">2/1 (토) 18시</span></li>
-            </ul>
-            <div class="button">
-                <a href="javascript:void(0);" onclick="showDriver()">1/31 (금) 자정 마감</a>
-            </div>
-    </div>
-</div>
+        <div class="pricing-container" id="pricingContainer">
+          <div class="pricing-card" id="card1">
+              <h1>1/20 (월)</h1>
+              <h3>28,000원</h3>
+              <ul>
+                  <li>노선 생성 안내: 1/18 (토) 18시</li>
+              </ul>
+              <div class="button">
+                  <a href="javascript:void(0);" onclick="showDriver()">1/17 (금) 자정 마감</a>
+              </div>
+          </div>
+      
+          <div class="pricing-card" id="centerCard">
+              <h1>1/27 (월)</h1>
+              <h3>35,000원</h3>
+              <ul>
+                  <li>노선 생성 안내: 1/25 (토) 18시</li>
+              </ul>
+              <div class="button">
+                  <a href="javascript:void(0);" onclick="showDriver()">1/24 (금) 자정 마감</a>
+              </div>
+          </div>
+      
+          <div class="pricing-card" id="card3">
+              <h1>2/3 (월)</h1>
+              <h3>42,000원</h3>
+              <ul>
+                  <li>노선 생성 안내: 2/1 (토) 18시</li>
+              </ul>
+              <div class="button">
+                  <a href="javascript:void(0);" onclick="showDriver()">1/31 (금) 자정 마감</a>
+              </div>
+          </div>
+      </div>
+      
+      
       <div class="col-md-12 col-sm-12">
         <div class="section-content text-center" style="padding-top: 40px;">
           <ul>
@@ -545,6 +548,17 @@ $.scrollIt({
 	onPageChange: null,    // function(pageIndex) that is called when page is changed
 	topOffset: -63
 	});
+});
+
+window.addEventListener('load', function() {
+  const container = document.getElementById('pricingContainer');
+  const centerCard = document.getElementById('centerCard');
+
+  if (container && centerCard) {
+      const containerCenter = container.offsetWidth / 2;
+      const cardCenter = centerCard.offsetLeft + (centerCard.offsetWidth / 2);
+      container.scrollLeft = cardCenter - containerCenter;  // 중앙 카드 위치로 스크롤
+  }
 });
 
 </script>
